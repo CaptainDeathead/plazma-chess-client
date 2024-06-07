@@ -6,6 +6,7 @@ from pygameGui import Button
 import requests
 import time
 from copy import deepcopy
+import threading as th
 
 pg.init()
 
@@ -119,7 +120,7 @@ class Window:
         self.screen = pg.display.set_mode((1200, 800))
         pg.display.set_caption("Plazma Chess ♟️")
         self.engine = engine.Engine()
-        self.pieceFont = pg.font.SysFont("segoeuisymbol", 100)
+        self.pieceFont = pg.font.Font("segoe-ui-symbol.ttf", 100)
         self.selectedSquare = None
         self.validMoves = ()
         self.bot = Bot(1)
